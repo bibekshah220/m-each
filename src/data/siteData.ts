@@ -1,0 +1,519 @@
+// ── Services ───────────────────────────────────────────────────
+export interface Service {
+  slug: string;
+  title: string;
+  shortDesc: string;
+  description: string;
+  fullDesc: string;
+  features: string[];
+  icon: string;
+  imageUrl?: string;
+}
+
+export const services: Service[] = [
+  {
+    slug: "site-survey-and-acquisition",
+    title: "Site Survey and Acquisition",
+    shortDesc: "Identifying optimal locations for network expansion.",
+    description:
+      "Conducting comprehensive site surveys for telecom and power projects. Identifying suitable locations for network expansion with detailed feasibility assessments.",
+    fullDesc: "Our site survey and acquisition service is the foundation of any successful network expansion. We combine geographic analysis with regulatory expertise to secure the best possible locations for your infrastructure.",
+    features: [
+      "Technical Feasibility Studies",
+      "Legal & Regulatory Clearance",
+      "Landlord Liaison & Leasing",
+      "Topographical Surveys",
+      "RFI (Radio Frequency Interference) Analysis",
+      "Power Availability Assessment"
+    ],
+    icon: "map-pin",
+    imageUrl: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "turnkey-services",
+    title: "Turnkey Services",
+    shortDesc: "Full turnkey solutions for seamless project execution.",
+    description:
+      "Providing complete Full Turnkey (FTK) solutions for telecom and power projects. Managing everything from planning to commissioning.",
+    fullDesc: "Meach Group delivers end-to-end turnkey projects, taking the burden of coordination off our clients. We manage the entire lifecycle from greenfield site acquisition to final network optimization.",
+    features: [
+      "Project Planning & Design",
+      "Material Procurement & Logistics",
+      "Civil Works & Construction",
+      "Equipment Installation & Integration",
+      "Testing & Commissioning",
+      "Handover & Documentation"
+    ],
+    icon: "key",
+    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "cwti-civil-works-tower-installation",
+    title: "CW/TI (Civil Works & Tower Installation)",
+    shortDesc: "Building telecom towers and infrastructure.",
+    description:
+      "Constructing telecom infrastructure, including towers and shelters. Ensuring structural integrity across diverse terrain.",
+    fullDesc: "We specialize in the complex civil engineering required for telecom towers. Whether it's a rooftop site in a dense city or a lattice tower on a remote mountain peak, we ensure safe and durable construction.",
+    features: [
+      "Foundation Design & Construction",
+      "Tower Assembly & Erection",
+      "Rooftop Infrastructure Setup",
+      "Shelter & Guardroom Construction",
+      "Security Fencing & Access Gates",
+      "Earthing & Lightning Protection Systems"
+    ],
+    icon: "tower-control",
+    imageUrl: "https://images.unsplash.com/photo-1516387554219-79896227951c?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "telecommunications-equipment-installation",
+    title: "Telecommunications Equipment Installation & Commissioning",
+    shortDesc: "Setting up and optimizing network components.",
+    description:
+      "Setting up, testing, and launching telecom equipment such as BTS, antennas, and routers.",
+    fullDesc: "Our highly trained technicians handle the precision installation of advanced telecom electronics. We ensure every component is configured correctly and integrated seamlessly into the existing network matrix.",
+    features: [
+      "BTS/NodeB/eNodeB Installation",
+      "Microwave Link Installation",
+      "Antenna & Feeder Cable Setup",
+      "Power & Battery Backup Integration",
+      "Software Configuration & Testing",
+      "Network Connectivity Verification"
+    ],
+    icon: "radio",
+    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "core-networks",
+    title: "Core Networks (BSC, MSC, DWDM, etc.)",
+    shortDesc: "Managing critical telecom network infrastructure.",
+    description:
+      "Installing and maintaining core telecom network components like Base Station Controllers (BSC) and Mobile Switching Centers (MSC).",
+    fullDesc: "The core network is the brain of the system. We provide specialized installation and maintenance services for high-capacity nodes, switching centers, and long-haul transmission systems like DWDM.",
+    features: [
+      "BSC/RNC Installation",
+      "MSC/Core Node Setup",
+      "DWDM/Transmission Equipment",
+      "Data Center Rack & Power Setup",
+      "Optical Cross-Connect Systems",
+      "High-Availability Monitoring"
+    ],
+    icon: "server",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010ccdcc51?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "power-installation",
+    title: "Power Installation",
+    shortDesc: "Deploying power backup and distribution solutions.",
+    description:
+      "Deploying power backup solutions, rectifiers, batteries, and generators to ensure uninterrupted operation.",
+    fullDesc: "Telecom reliability depends on power consistency. We design and install robust power systems, incorporating solar, grid, and backup generators to maintain 99.9% uptime for critical infrastructure.",
+    features: [
+      "AC/DC Power Systems",
+      "Rectifier & Battery Backup",
+      "Solar Power Integration",
+      "Generator Installation & ATS",
+      "Electrical Wiring & Distribution",
+      "Energy Efficiency Audits"
+    ],
+    icon: "zap",
+    imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb60c883a?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "optical-fiber-laying-and-installation",
+    title: "Optical Fiber Laying and Installation",
+    shortDesc: "Laying aerial and underground fiber networks.",
+    description:
+      "Laying and integrating aerial and underground Fiber-to-the-Home (FTTH) and backbone fiber networks.",
+    fullDesc: "We provide high-speed connectivity solutions through expert fiber optic engineering. Our services cover everything from long-haul backbone networks to complex city-wide FTTH rollouts.",
+    features: [
+      "Underground Trenching & HDD",
+      "Aerial Cable Stringing",
+      "Fiber Splicing & Termination",
+      "OTDR Testing & Certification",
+      "FTTH Network Deployment",
+      "ODF & Patch Panel Setup"
+    ],
+    icon: "cable",
+    imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "drive-test-and-network-optimization",
+    title: "Drive Test and Network Optimization",
+    shortDesc: "Assessing and optimizing network coverage and quality.",
+    description:
+      "Conducting drive tests to assess network coverage and quality. Optimizing network performance for better user experience.",
+    fullDesc: "We ensure your network delivers on its promises. Using advanced probes and analysis tools, we pinpoint dead zones, interference, and handover issues to maintain peak network quality.",
+    features: [
+      "RF Coverage Drive Testing",
+      "Throughput & QoS Benchmarking",
+      "Neighbor List Optimization",
+      "Interference Analysis",
+      "Capacity Planning Updates",
+      "Post-Launch Performance Reports"
+    ],
+    icon: "gauge",
+    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "supply-of-tower-fencing-grounding",
+    title: "Supply of Tower, Fencing, Grounding & Electrical Material",
+    shortDesc: "Providing telecom towers, grounding, and materials.",
+    description:
+      "Providing telecom towers, grounding solutions, fencing materials, and electrical components.",
+    fullDesc: "Meach Group maintains a robust supply chain to provide high-quality materials for infrastructure projects. We source only certified components to ensure the longevity of your deployment.",
+    features: [
+      "Lattice & Monopole Towers",
+      "High-Quality Fencing Systems",
+      "Copper/Chemical Earthing Kits",
+      "Cables, Conduits & Connectors",
+      "Aviation Warning Lights",
+      "Climate Control Enclosures"
+    ],
+    icon: "package",
+    imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "operation-and-maintenance-of-networks",
+    title: "Operation and Maintenance of Networks",
+    shortDesc: "Managing O&M of telecom networks.",
+    description:
+      "Managing the operation and maintenance (O&M) of telecom networks to ensure smooth functionality. Proactive monitoring and repair.",
+    fullDesc: "Our O&M team acts as the first line of defense for your network. We provide scheduled preventive maintenance and 24/7 reactive repair services to keep downtime to an absolute minimum.",
+    features: [
+      "24/7 Troubleshooting & Repair",
+      "Preventive Maintenance Schedules",
+      "Site Cleaning & Security Audits",
+      "Generator Servicing & Fueling",
+      "Spares Inventory Management",
+      "Environmental Monitoring"
+    ],
+    icon: "wrench",
+    imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "operation-and-maintenance-of-optical-fiber",
+    title: "Operation and Maintenance of Optical Fiber",
+    shortDesc: "Inspecting and maintaining optical fiber networks.",
+    description:
+      "Regular inspection, maintenance, and troubleshooting of optical fiber networks.",
+    fullDesc: "Fiber networks are vulnerable to accidental cuts and environmental stress. We provide specialized fiber O&M to ensure that your high-speed backbone remains resilient and fast.",
+    features: [
+      "Fiber Route Surveillance",
+      "Rapid Fiber Cut Repair",
+      "Optical Power Monitoring",
+      "Manhole/Bunker Maintenance",
+      "Emergency Splicing Teams",
+      "Signal Quality Audits"
+    ],
+    icon: "activity",
+    imageUrl: "https://images.unsplash.com/photo-1601343534104-98812b3babc3?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    slug: "reverse-engineering-and-site-upgradation",
+    title: "Reverse Engineering and Site Infrastructure Upgradation",
+    shortDesc: "Upgrading existing telecom site infrastructure.",
+    description:
+      "Analyzing and upgrading existing telecom site infrastructure for improved performance and capacity.",
+    fullDesc: "As technology evolves, sites need to handle more load. We analyze legacy site designs and provide strategic upgrades to structural and power systems, enabling the deployment of 5G and beyond.",
+    features: [
+      "Structural Integrity Analysis",
+      "Tower Reinforcement & Loading",
+      "Power Capacity Upgradation",
+      "Space Optimization Services",
+      "Modernization Feasibility Studies",
+      "Retrofitting Legacy Systems"
+    ],
+    icon: "refresh-cw",
+    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+  },
+];
+
+// ── Projects ───────────────────────────────────────────────────
+export interface Project {
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  location: string;
+  status: string;
+  completionDate?: string;
+}
+
+export const projects: Project[] = [
+  {
+    title: "Site Relocation and Solution Change",
+    description:
+      "Comprehensive site relocation services including dismantling, transportation, and reinstallation of telecom equipment at new locations.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
+    location: "Various Locations, Nepal",
+    status: "Completed",
+    completionDate: "2024"
+  },
+  {
+    title: "Grid Power Connection and Related Services",
+    description:
+      "Establishing reliable grid power connections for telecom sites, including transformer installation and power line extensions.",
+    category: "Power",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    location: "Terai Region, Nepal",
+    status: "Completed",
+    completionDate: "2023"
+  },
+  {
+    title: "Ncell Rollout Project",
+    description:
+      "Large-scale network rollout for Ncell, one of Nepal's leading telecom operators, covering site acquisition through commissioning.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+    location: "Western Region, Nepal",
+    status: "Ongoing",
+    completionDate: "2025 (Projected)"
+  },
+  {
+    title: "Small Cell Solution",
+    description:
+      "Deployment of small cell solutions to enhance network coverage in dense urban areas and indoor environments.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1516383617811-952d8775f0a2?auto=format&fit=crop&q=80&w=800",
+    location: "Kathmandu Valley",
+    status: "Completed",
+    completionDate: "2024"
+  },
+  {
+    title: "Physical Verification of Assets",
+    description:
+      "Thorough on-site verification and documentation of telecom infrastructure assets for accurate inventory management.",
+    category: "Audit",
+    image: "https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=800",
+    location: "Nationwide, Nepal",
+    status: "Completed",
+    completionDate: "2023"
+  },
+  {
+    title: "2G BTS in Existing 4G LTE Sites",
+    description:
+      "Survey, transportation, installation, and commissioning of 2G BTS equipment in existing 4G LTE sites for expanded coverage.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    location: "Eastern Region, Nepal",
+    status: "Completed",
+    completionDate: "2024"
+  },
+  {
+    title: "Equipment Building & Fencing Construction",
+    description:
+      "Construction of secure equipment buildings and fencing for telecom sites, ensuring protection and compliance.",
+    category: "Infrastructure",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800",
+    location: "Pokhara Valley",
+    status: "Completed",
+    completionDate: "2023"
+  },
+  {
+    title: "Underground Optical Fiber Network",
+    description:
+      "Construction of underground optical fiber networks and related civil works for high-speed data connectivity.",
+    category: "Fiber",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    location: "Lumbini Province",
+    status: "Completed",
+    completionDate: "2024"
+  },
+  {
+    title: "Underground Electricity Distribution Network",
+    description:
+      "Design and construction of underground electricity distribution networks for reliable power supply.",
+    category: "Power",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    location: "Gandaki Province",
+    status: "Completed",
+    completionDate: "2023"
+  },
+];
+
+// ── Testimonials ───────────────────────────────────────────────
+export interface Testimonial {
+  name: string;
+  text: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Robert Lewis",
+    text: "Meach Group has been an exceptional partner in our telecom infrastructure projects. Their expertise in site relocation and network deployment has significantly improved our operational efficiency. Highly recommended!",
+  },
+  {
+    name: "Erica Adams",
+    text: "Meach Group's commitment to quality and innovation is evident in their work. Their expertise in drive testing and network optimization has made a noticeable difference in our network performance.",
+  },
+  {
+    name: "Daniel Wright",
+    text: "We partnered with Meach Group for power installation and site management. Their turnkey solutions have helped us streamline our operations and maintain uninterrupted service.",
+  },
+  {
+    name: "Jessica Turner",
+    text: "The team at Meach Group is highly professional and dedicated. Their underground optical fiber network construction has greatly enhanced our connectivity and service reliability.",
+  },
+];
+
+// ── Blog Posts ──────────────────────────────────────────────────
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  category: string;
+  author: string;
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "the-future-of-telecommunications-in-nepal",
+    title: "The Future of Telecommunications in Nepal: Trends and Innovations",
+    excerpt:
+      "Explore the evolving landscape of telecommunications in Nepal, including 5G readiness, fiber expansion, and digital transformation initiatives.",
+    content:
+      "Nepal's telecommunications sector is undergoing rapid transformation with advances in 5G technology, nationwide fiber optic expansion, and increasing mobile penetration. As infrastructure providers like Meach Group continue to deploy cutting-edge solutions, the country is positioned for a digital revolution that will enhance connectivity across urban and rural areas alike.",
+    date: "2025-06-03",
+    category: "Technology",
+    author: "Meach Group Team",
+  },
+  {
+    slug: "importance-of-power-backup-solutions",
+    title: "Importance of Power Backup Solutions in Telecommunications",
+    excerpt:
+      "Understanding why reliable power backup is critical for maintaining uninterrupted telecom services in Nepal's challenging terrain.",
+    content:
+      "Power reliability is a cornerstone of telecommunications infrastructure. In Nepal, where grid power can be inconsistent, deploying robust backup solutions — including rectifiers, batteries, and generators — is essential. Meach Group specializes in power installation services that keep networks running 24/7, ensuring seamless connectivity for millions of users.",
+    date: "2025-05-15",
+    category: "Infrastructure",
+    author: "Meach Group Team",
+  },
+  {
+    slug: "revolutionizing-infrastructure-development",
+    title: "How Meach Group is Revolutionizing Infrastructure Development in Nepal",
+    excerpt:
+      "A look at Meach Group's end-to-end approach to building Nepal's telecom and power infrastructure.",
+    content:
+      "Since our establishment in 2011, Meach Group has been at the forefront of Nepal's infrastructure development. From site survey and acquisition to turnkey solutions and ongoing maintenance, we provide comprehensive services that have earned the trust of leading telecom operators. Our commitment to quality, safety, and innovation drives every project we undertake.",
+    date: "2025-04-20",
+    category: "Company",
+    author: "Meach Group Team",
+  },
+  {
+    slug: "ehs-ppe-safety-standards",
+    title: "EHS/PPE: Safety Standards in Telecom Infrastructure",
+    excerpt:
+      "How Meach Group ensures the highest standards of Environment, Health, and Safety across all project sites.",
+    content:
+      "Safety is non-negotiable at Meach Group. We enforce strict EHS protocols and PPE requirements across all project sites. Our comprehensive safety training programs, regular audits, and commitment to international standards ensure that every team member returns home safely while delivering exceptional infrastructure projects.",
+    date: "2025-03-10",
+    category: "Safety",
+    author: "Meach Group Team",
+  },
+];
+
+// ── Jobs ────────────────────────────────────────────────────────
+export interface Job {
+  slug: string;
+  title: string;
+  location: string;
+  type: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+  benefits: string[];
+}
+
+export const jobs: Job[] = [
+  {
+    slug: "telecom-site-engineer",
+    title: "Telecom Site Engineer",
+    location: "Kathmandu, Nepal",
+    type: "Full-time",
+    description:
+      "Lead the installation and commissioning of telecom equipment at various sites across Nepal. Ensure quality standards and timely project delivery.",
+    responsibilities: [
+      "Install and commission BTS, antennas, and telecom equipment",
+      "Conduct site surveys and feasibility assessments",
+      "Coordinate with project managers and clients",
+      "Ensure compliance with safety and quality standards",
+      "Document installation progress and generate reports",
+    ],
+    requirements: [
+      "Bachelor's degree in Telecommunications or Electrical Engineering",
+      "3+ years experience in telecom infrastructure",
+      "Knowledge of 2G/3G/4G/LTE technologies",
+      "Willingness to travel to project sites across Nepal",
+      "Strong problem-solving skills",
+    ],
+    benefits: [
+      "Competitive salary package",
+      "Professional development opportunities",
+      "Health insurance coverage",
+      "Performance bonuses",
+      "Travel allowances",
+    ],
+  },
+  {
+    slug: "fiber-optic-technician",
+    title: "Fiber Optic Technician",
+    location: "Kathmandu, Nepal",
+    type: "Full-time",
+    description:
+      "Install, splice, and maintain optical fiber networks for both aerial and underground deployments across Nepal.",
+    responsibilities: [
+      "Lay and splice optical fiber cables",
+      "Perform OTDR testing and fiber characterization",
+      "Maintain and repair fiber optic networks",
+      "Install FTTH equipment at customer premises",
+      "Follow safety protocols during all field operations",
+    ],
+    requirements: [
+      "Diploma or degree in Electronics/Telecommunications",
+      "2+ years experience in fiber optic installation",
+      "Proficiency with fiber splicing equipment and OTDR",
+      "Physical fitness for field work",
+      "Valid driving license preferred",
+    ],
+    benefits: [
+      "Competitive salary",
+      "Skill development training",
+      "Health and accident insurance",
+      "Field allowances",
+      "Career growth opportunities",
+    ],
+  },
+  {
+    slug: "project-manager",
+    title: "Project Manager – Telecom Infrastructure",
+    location: "Kathmandu, Nepal",
+    type: "Full-time",
+    description:
+      "Oversee end-to-end delivery of telecom infrastructure projects, managing timelines, budgets, and stakeholder communication.",
+    responsibilities: [
+      "Plan and manage telecom infrastructure projects",
+      "Coordinate with clients, vendors, and field teams",
+      "Monitor project budgets and timelines",
+      "Prepare and present project status reports",
+      "Ensure quality and safety compliance",
+    ],
+    requirements: [
+      "Bachelor's degree in Engineering or Project Management",
+      "5+ years experience managing telecom projects",
+      "Strong leadership and communication skills",
+      "Proficiency in project management tools",
+      "PMP certification is a plus",
+    ],
+    benefits: [
+      "Attractive compensation package",
+      "Leadership development programs",
+      "Comprehensive health insurance",
+      "Annual performance bonuses",
+      "Flexible working arrangements",
+    ],
+  },
+];
