@@ -35,17 +35,20 @@ const Navbar = () => {
         setMobileOpen(false);
     }, [location.pathname]);
 
+    const isHomePage = location.pathname === "/";
+    const isSolid = scrolled || !isHomePage;
+
     return (
         <header
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+            className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${isSolid
                 ? "bg-white/98 dark:bg-slate-900/98 backdrop-blur-md shadow-lg border-b border-slate-200 dark:border-white/10"
                 : "bg-transparent py-2"
                 }`}
         >
-            <div className={`max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[70px]" : "h-[100px]"}`}>
+            <div className={`max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between transition-all duration-500 ${isSolid ? "h-[70px]" : "h-[100px]"}`}>
                 {/* Logo - Left Aligned */}
-                <Link to="/" className={`relative z-10 shrink-0 transition-colors duration-500 ${scrolled ? "text-transparent" : "text-white"}`}>
-                    <Logo size="md" variant={scrolled ? "default" : "light"} />
+                <Link to="/" className={`relative z-10 shrink-0 transition-colors duration-500 ${isSolid ? "text-transparent" : "text-white"}`}>
+                    <Logo size="md" variant={isSolid ? "default" : "light"} />
                 </Link>
 
                 {/* Right Side: Navigation + CTA */}
@@ -58,7 +61,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.to}
                                     to={link.to}
-                                    className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${scrolled
+                                    className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${isSolid
                                         ? isActive
                                             ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10"
                                             : "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
@@ -75,7 +78,7 @@ const Navbar = () => {
 
                     {/* CTA + Theme Toggle + Mobile Hamburger */}
                     <div className="flex items-center gap-4">
-                        <div className={`transition-colors duration-300 ${scrolled ? "text-slate-900 dark:text-white" : "text-white"}`}>
+                        <div className={`transition-colors duration-300 ${isSolid ? "text-slate-900 dark:text-white" : "text-white"}`}>
                             <ThemeToggle />
                         </div>
                         <Link
@@ -86,7 +89,7 @@ const Navbar = () => {
                         </Link>
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className={`lg:hidden relative z-10 p-2 rounded-lg transition-colors ${scrolled
+                            className={`lg:hidden relative z-10 p-2 rounded-lg transition-colors ${isSolid
                                 ? "text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10"
                                 : "text-white hover:bg-white/10"
                                 }`}

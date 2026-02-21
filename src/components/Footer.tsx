@@ -1,28 +1,33 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowRight, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Facebook, Linkedin, Instagram, Twitter, Music2 } from "lucide-react";
 import Logo from "@/components/Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0f172a] text-white">
+    <footer className="bg-[#f8fafc] dark:bg-slate-950 text-slate-900 dark:text-white border-t border-slate-200 dark:border-white/5">
       <div className="container-narrow pt-20 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-5">
-              <Logo size="sm" variant="light" />
+              <Logo size="sm" variant="default" />
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
-              A trusted service provider in the telecommunications and infrastructure sector, offering end-to-end solutions in network deployment, site management, and power distribution.
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+              Meach Group is a leading service provider delivering comprehensive, end-to-end solutions in network deployment, site management, and power distribution across Nepal.
             </p>
             <div className="flex gap-3">
-              {[Facebook, Linkedin, Twitter].map((Icon, i) => (
+              {[
+                { Icon: Facebook, color: "hover:bg-blue-600" },
+                { Icon: Instagram, color: "hover:bg-pink-600" },
+                { Icon: Music2, color: "hover:bg-black" }, // TikTok placeholder
+                { Icon: Linkedin, color: "hover:bg-blue-700" }
+              ].map(({ Icon, color }, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-500 flex items-center justify-center text-white/50 hover:text-white transition-all duration-200"
+                  className={`w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-400 dark:text-white/50 hover:text-white transition-all duration-300 ${color} shadow-sm`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -30,62 +35,59 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-white">Quick Links</h4>
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-slate-900 dark:text-white">Quick Links</h4>
             <ul className="space-y-3">
-              {["About", "Services", "Projects", "Gallery", "Careers", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link
-                    to={`/${link.toLowerCase()}`}
-                    className="text-white/60 hover:text-blue-400 text-sm transition-colors inline-flex items-center gap-1 group"
-                  >
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    {link}
+              {["Home", "About Us", "FAQs", "Services", "Contact Us"].map((link) => {
+                const path = link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`;
+                return (
+                  <li key={link}>
+                    <Link
+                      to={path}
+                      className="text-slate-500 dark:text-white/60 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Service Links */}
+          <div>
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-slate-900 dark:text-white">Service Links</h4>
+            <ul className="space-y-3">
+              {[
+                "Network Deployment",
+                "Site Management",
+                "Tower Installation",
+                "Optical Fiber",
+                "Power Distribution",
+              ].map((s) => (
+                <li key={s}>
+                  <Link to="/services" className="text-slate-500 dark:text-white/60 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+                    {s}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-white">Services</h4>
-            <ul className="space-y-3">
-              {[
-                "Site Survey & Acquisition",
-                "Turnkey Services",
-                "Tower Installation",
-                "Optical Fiber Installation",
-                "Power Installation",
-                "Network Optimization",
-              ].map((s) => (
-                <li key={s}>
-                  <span className="text-white/60 text-sm">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-white">Contact Us</h4>
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-5 text-slate-900 dark:text-white">Contact Info</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-white/60">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-blue-400" />
-                </div>
-                Shankhamul-34, Kathmandu, Nepal
+              <li className="flex items-start gap-3 text-sm text-slate-500 dark:text-white/60">
+                <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                <span>Shop 25/429 Montague Road, West End QLD 4101</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/60">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-blue-400" />
-                </div>
-                9802000382 | 9802000417
+              <li className="flex items-center gap-3 text-sm text-slate-500 dark:text-white/60">
+                <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
+                <span>9802000382 | 9802000417</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/60">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-blue-400" />
-                </div>
-                info@meachgroup.com
+              <li className="flex items-center gap-3 text-sm text-slate-500 dark:text-white/60">
+                <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
+                <span className="break-all">info@meachgroup.com</span>
               </li>
             </ul>
           </div>
