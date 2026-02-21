@@ -12,8 +12,8 @@ const sizes = {
 
 const Logo = ({ size = "md", variant = "default", showText = true }: LogoProps) => {
     const { svg, text } = sizes[size];
-    const strokeColor = variant === "light" ? "currentColor" : "#0000CD";
-    const textColor = variant === "light" ? "text-current" : "text-[#0000CD]";
+    const strokeColor = variant === "light" ? "#ffffff" : "#0000CD";
+    const textColor = variant === "light" ? "text-white" : "text-[#0000CD]";
 
     return (
         <div className="flex items-center gap-2">

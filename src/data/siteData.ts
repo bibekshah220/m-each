@@ -527,3 +527,23 @@ export const jobs: Job[] = [
     ],
   },
 ];
+// ── Partners ───────────────────────────────────────────────────
+export interface Partner {
+  name: string;
+  logo: string;
+}
+
+export const partners: Partner[] = [
+  {
+    name: "Huawei",
+    logo: "https://www.vectorlogo.zone/logos/huawei/huawei-ar21.svg",
+  },
+  {
+    name: "Coca-Cola",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png",
+  },
+  {
+    name: "ZTE",
+    logo: "/zte-logo.svg",
+  },
+];

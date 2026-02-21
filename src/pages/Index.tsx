@@ -34,7 +34,7 @@ import HeroSection from "@/components/HeroSection";
 import Modal from "@/components/Modal";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import { services, projects, testimonials, Service, Project } from "@/data/siteData";
+import { services, projects, testimonials, partners, Service, Project } from "@/data/siteData";
 
 /* ─── Data ──────────────────────────────────────────── */
 
@@ -144,12 +144,12 @@ const StatCounter = ({
 }) => {
     const { ref, count } = useAnimatedCounter(value);
     return (
-        <div ref={ref} className="text-center">
-            <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">
+        <div ref={ref} className="text-center group/stat">
+            <div className="text-3xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-1.5 transition-transform duration-300 group-hover/stat:scale-110">
                 {count}
                 {suffix}
             </div>
-            <p className="text-white/60 text-xs font-medium uppercase tracking-wider">
+            <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm font-bold uppercase tracking-widest">
                 {label}
             </p>
         </div>
@@ -214,30 +214,30 @@ const Index = () => {
         <>
             {/* Hero */}
             <HeroSection>
-                <div>
-                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 rounded-full text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-500/10">
+                <div className="flex flex-col items-center text-center">
+                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 rounded-full text-blue-400 bg-blue-500/10 backdrop-blur-sm border border-blue-400/20">
                         Since 2011 — Trusted Infrastructure Partner
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground mb-6 leading-[1.1]">
+                    <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-white mb-6 leading-[1.1]">
                         Leading the Future of{" "}
-                        <span className="hero-highlight">Telecommunications</span>{" "}
-                        &amp; Infrastructure
+                        <span className="text-blue-400">Telecommunications</span>{" "}
+                        <br className="hidden md:block" /> &amp; Infrastructure
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-                        Meach Group is a trusted service provider delivering
+                    <p className="text-lg text-slate-200 max-w-2xl mb-10 leading-relaxed">
+                        Meach Group is a leading service provider delivering
                         comprehensive, end-to-end solutions in network deployment,
                         site management, and power distribution across Nepal.
                     </p>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap items-center justify-center gap-4">
                         <Link
                             to="/services"
-                            className="btn-primary px-7 py-3.5 rounded-xl bg-blue-500 hover:bg-blue-600 text-white shadow-lg shadow-blue-500/25"
+                            className="btn-primary px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-600 text-white shadow-xl shadow-blue-500/40"
                         >
                             Our Services <ArrowRight className="w-4 h-4" />
                         </Link>
                         <Link
                             to="/about"
-                            className="btn-primary px-7 py-3.5 rounded-xl border-2 border-border text-foreground hover:border-blue-300 hover:text-blue-600 dark:hover:border-blue-500 dark:hover:text-blue-400"
+                            className="btn-primary px-8 py-4 rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 hover:border-white/40"
                         >
                             Learn More
                         </Link>
@@ -371,6 +371,29 @@ const Index = () => {
                             })}
                         </div>
                     </RevealSection>
+                </div>
+            </section>
+
+            {/* Partners Section */}
+            <section className="py-20 bg-background dark:bg-[#0a0f1a] border-y border-border/50">
+                <div className="container-narrow">
+                    <div className="text-center mb-12">
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-4 py-1.5 rounded-full mb-4 inline-block">
+                            Our Strategic Network
+                        </span>
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-foreground">Our Trusted Partners</h2>
+                    </div>
+                    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20 transition-all duration-700 ease-in-out">
+                        {partners.map((partner) => (
+                            <div key={partner.name} className="h-10 md:h-12 w-28 md:w-36 flex items-center justify-center group/partner">
+                                <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover/partner:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

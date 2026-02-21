@@ -20,7 +20,12 @@ const Navbar = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 40);
+        const onScroll = () => {
+            // Adaptive threshold: change after hero section (approx innerHeight)
+            // or a fixed high threshold if innerHeight is unknown
+            const threshold = window.innerHeight * 0.8;
+            setScrolled(window.scrollY > threshold);
+        };
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
         return () => window.removeEventListener("scroll", onScroll);
@@ -32,58 +37,68 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-[#0f172a]/98 backdrop-blur-md shadow-lg shadow-black/5"
-                    : "bg-[#0f172a]"
+            className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+                ? "bg-white/98 dark:bg-slate-900/98 backdrop-blur-md shadow-lg border-b border-slate-200 dark:border-white/10"
+                : "bg-transparent py-2"
                 }`}
         >
-            <div className="container-narrow flex items-center justify-between h-[72px]">
-                {/* Logo */}
-                <Link to="/" className="relative z-10 text-white">
-                    <Logo size="sm" variant="light" />
+            <div className={`max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[70px]" : "h-[100px]"}`}>
+                {/* Logo - Left Aligned */}
+                <Link to="/" className={`relative z-10 shrink-0 transition-colors duration-500 ${scrolled ? "text-transparent" : "text-white"}`}>
+                    <Logo size="md" variant={scrolled ? "default" : "light"} />
                 </Link>
 
-                {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-1">
-                    {navLinks.map((link) => {
-                        const isActive = location.pathname === link.to;
-                        return (
-                            <Link
-                                key={link.to}
-                                to={link.to}
-                                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                                        ? "text-white bg-white/15"
-                                        : "text-white/70 hover:text-white hover:bg-white/10"
-                                    }`}
-                            >
-                                {link.label}
-                            </Link>
-                        );
-                    })}
-                </nav>
+                {/* Right Side: Navigation + CTA */}
+                <div className="flex items-center gap-8">
+                    {/* Desktop Nav */}
+                    <nav className="hidden lg:flex items-center gap-1">
+                        {navLinks.map((link) => {
+                            const isActive = location.pathname === link.to;
+                            return (
+                                <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${scrolled
+                                        ? isActive
+                                            ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10"
+                                            : "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
+                                        : isActive
+                                            ? "text-white bg-white/20 backdrop-blur-sm"
+                                            : "text-white/80 hover:text-white hover:bg-white/10"
+                                        }`}
+                                >
+                                    {link.label}
+                                </Link>
+                            );
+                        })}
+                    </nav>
 
-                {/* CTA + Theme Toggle + Mobile Hamburger */}
-                <div className="flex items-center gap-3">
-                    <div className="text-white">
-                        <ThemeToggle />
+                    {/* CTA + Theme Toggle + Mobile Hamburger */}
+                    <div className="flex items-center gap-4">
+                        <div className={`transition-colors duration-300 ${scrolled ? "text-slate-900 dark:text-white" : "text-white"}`}>
+                            <ThemeToggle />
+                        </div>
+                        <Link
+                            to="/contact"
+                            className="hidden lg:inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-bold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30"
+                        >
+                            Contact Us <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <button
+                            onClick={() => setMobileOpen(!mobileOpen)}
+                            className={`lg:hidden relative z-10 p-2 rounded-lg transition-colors ${scrolled
+                                ? "text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10"
+                                : "text-white hover:bg-white/10"
+                                }`}
+                            aria-label="Toggle menu"
+                        >
+                            {mobileOpen ? (
+                                <X className="w-6 h-6" />
+                            ) : (
+                                <Menu className="w-6 h-6" />
+                            )}
+                        </button>
                     </div>
-                    <Link
-                        to="/contact"
-                        className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
-                    >
-                        Contact Us <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <button
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden relative z-10 p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
-                        aria-label="Toggle menu"
-                    >
-                        {mobileOpen ? (
-                            <X className="w-6 h-6" />
-                        ) : (
-                            <Menu className="w-6 h-6" />
-                        )}
-                    </button>
                 </div>
             </div>
 
@@ -117,8 +132,8 @@ const Navbar = () => {
                                 key={link.to}
                                 to={link.to}
                                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                                        ? "text-white bg-white/15"
-                                        : "text-white/70 hover:text-white hover:bg-white/10"
+                                    ? "text-white bg-white/15"
+                                    : "text-white/70 hover:text-white hover:bg-white/10"
                                     }`}
                             >
                                 {link.label}
