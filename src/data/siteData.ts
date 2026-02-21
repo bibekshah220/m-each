@@ -336,24 +336,34 @@ export const projects: Project[] = [
 // ── Testimonials ───────────────────────────────────────────────
 export interface Testimonial {
   name: string;
+  title: string;
+  avatar: string;
   text: string;
 }
 
 export const testimonials: Testimonial[] = [
   {
     name: "Robert Lewis",
+    title: "Regional Manager, Ncell",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150",
     text: "Meach Group has been an exceptional partner in our telecom infrastructure projects. Their expertise in site relocation and network deployment has significantly improved our operational efficiency. Highly recommended!",
   },
   {
     name: "Erica Adams",
+    title: "Project Director, Nepal Telecom",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
     text: "Meach Group's commitment to quality and innovation is evident in their work. Their expertise in drive testing and network optimization has made a noticeable difference in our network performance.",
   },
   {
     name: "Daniel Wright",
+    title: "CTO, Smart Cell",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150",
     text: "We partnered with Meach Group for power installation and site management. Their turnkey solutions have helped us streamline our operations and maintain uninterrupted service.",
   },
   {
     name: "Jessica Turner",
+    title: "Infrastructure Lead, DishHome",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150",
     text: "The team at Meach Group is highly professional and dedicated. Their underground optical fiber network construction has greatly enhanced our connectivity and service reliability.",
   },
 ];

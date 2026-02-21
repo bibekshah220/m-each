@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import Logo from "@/components/Logo";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -12,7 +12,6 @@ const navLinks = [
     { label: "Gallery", to: "/gallery" },
     { label: "Blog", to: "/blog" },
     { label: "Careers", to: "/careers" },
-    { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -27,7 +26,6 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    // Close mobile menu on route change
     useEffect(() => {
         setMobileOpen(false);
     }, [location.pathname]);
@@ -35,14 +33,14 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-border"
-                : "bg-transparent"
+                    ? "bg-[#0f172a]/98 backdrop-blur-md shadow-lg shadow-black/5"
+                    : "bg-[#0f172a]"
                 }`}
         >
-            <div className="container-narrow flex items-center justify-between h-16 md:h-20">
+            <div className="container-narrow flex items-center justify-between h-[72px]">
                 {/* Logo */}
-                <Link to="/" className={`relative z-10 ${scrolled ? "text-foreground" : "text-white"}`}>
-                    <Logo size="sm" variant={scrolled ? "default" : "light"} />
+                <Link to="/" className="relative z-10 text-white">
+                    <Logo size="sm" variant="light" />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -53,13 +51,9 @@ const Navbar = () => {
                             <Link
                                 key={link.to}
                                 to={link.to}
-                                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${scrolled
-                                    ? isActive
-                                        ? "text-primary bg-accent"
-                                        : "text-foreground/70 hover:text-primary hover:bg-accent/60"
-                                    : isActive
-                                        ? "text-white bg-white/20"
-                                        : "text-white/80 hover:text-white hover:bg-white/10"
+                                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
+                                        ? "text-white bg-white/15"
+                                        : "text-white/70 hover:text-white hover:bg-white/10"
                                     }`}
                             >
                                 {link.label}
@@ -68,17 +62,20 @@ const Navbar = () => {
                     })}
                 </nav>
 
-                {/* Theme Toggle + Mobile Hamburger */}
-                <div className="flex items-center gap-1">
-                    <div className={scrolled ? "text-foreground" : "text-white"}>
+                {/* CTA + Theme Toggle + Mobile Hamburger */}
+                <div className="flex items-center gap-3">
+                    <div className="text-white">
                         <ThemeToggle />
                     </div>
+                    <Link
+                        to="/contact"
+                        className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
+                    >
+                        Contact Us <ArrowRight className="w-4 h-4" />
+                    </Link>
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className={`lg:hidden relative z-10 p-2 rounded-lg transition-colors ${scrolled
-                            ? "text-foreground hover:bg-muted"
-                            : "text-white hover:bg-white/10"
-                            }`}
+                        className="lg:hidden relative z-10 p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
                         aria-label="Toggle menu"
                     >
                         {mobileOpen ? (
@@ -99,14 +96,14 @@ const Navbar = () => {
 
             {/* Mobile Menu Panel */}
             <nav
-                className={`fixed top-0 right-0 h-full w-72 bg-white dark:bg-gray-900 z-50 shadow-2xl transition-transform duration-300 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-full w-72 bg-[#0f172a] z-50 shadow-2xl transition-transform duration-300 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                <div className="flex items-center justify-between p-4 border-b border-border">
-                    <Logo size="sm" variant="default" />
+                <div className="flex items-center justify-between p-4 border-b border-white/10">
+                    <Logo size="sm" variant="light" />
                     <button
                         onClick={() => setMobileOpen(false)}
-                        className="p-2 rounded-lg hover:bg-muted text-foreground"
+                        className="p-2 rounded-lg hover:bg-white/10 text-white"
                         aria-label="Close menu"
                     >
                         <X className="w-5 h-5" />
@@ -120,14 +117,20 @@ const Navbar = () => {
                                 key={link.to}
                                 to={link.to}
                                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                                    ? "text-primary bg-accent"
-                                    : "text-foreground/70 hover:text-primary hover:bg-accent/50"
+                                        ? "text-white bg-white/15"
+                                        : "text-white/70 hover:text-white hover:bg-white/10"
                                     }`}
                             >
                                 {link.label}
                             </Link>
                         );
                     })}
+                    <Link
+                        to="/contact"
+                        className="block mt-4 px-4 py-3 rounded-lg bg-blue-500 text-center text-white text-sm font-semibold hover:bg-blue-600 transition-colors"
+                    >
+                        Contact Us
+                    </Link>
                 </div>
             </nav>
         </header>

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import heroPoster from "@/assets/hero-bg.jpg";
 
 interface HeroSectionProps {
@@ -6,39 +6,33 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ children }: HeroSectionProps) => {
-    const [videoLoaded, setVideoLoaded] = useState(false);
-
-    useEffect(() => {
-        const prefersReduced = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-        if (prefersReduced) {
-            setVideoLoaded(true);
-        }
-    }, []);
-
     return (
-        <section className="hero-video-wrapper">
-            {/* Background Video */}
-            <video
-                className={`hero-video ${videoLoaded ? "hero-video--loaded" : ""}`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster={heroPoster}
-                onCanPlayThrough={() => setVideoLoaded(true)}
-            >
-                <source src="/videos/hero-bg.mp4" type="video/mp4" />
-            </video>
+        <section className="hero-section pt-[72px]">
+            {/* Decorative Elements */}
+            <div className="hero-dots top-24 right-12 hidden lg:block" />
+            <div className="hero-dots bottom-20 left-8 hidden lg:block" />
+            <div className="absolute top-20 left-[20%] w-64 h-64 rounded-full bg-blue-500/5 hidden lg:block" />
+            <div className="absolute bottom-10 right-[15%] w-40 h-40 rounded-full bg-blue-500/5 hidden lg:block" />
 
-            {/* Dark Gradient Overlay */}
-            <div className="hero-video-overlay" />
+            <div className="container-narrow py-16 md:py-24 lg:py-28">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    {/* Left: Content */}
+                    <div className="relative z-10">
+                        {children}
+                    </div>
 
-            {/* Content */}
-            <div className="hero-video-content pt-32 pb-20 md:pt-40 md:pb-32">
-                {children}
+                    {/* Right: Circular Image */}
+                    <div className="flex justify-center lg:justify-end relative">
+                        <div className="hero-image-circle">
+                            <img
+                                src={heroPoster}
+                                alt="Meach Group - Telecommunications Infrastructure"
+                            />
+                        </div>
+                        {/* Decorative dots around image */}
+                        <div className="hero-dots -top-8 -right-4 hidden md:block" />
+                    </div>
+                </div>
             </div>
         </section>
     );
