@@ -3,6 +3,8 @@ import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import turnkeyEngineer from "@/assets/gallery/turnkey-engineer.png";
+import towerLandscape from "@/assets/gallery/telecom-tower-landscape.jpg";
 
 /* ─── Scroll Reveal Wrapper ────────────────────────── */
 const RevealSection = ({
@@ -90,7 +92,7 @@ const About = () => (
                         <div className="group card-interactive bg-card rounded-2xl overflow-hidden card-shadow flex flex-col h-full">
                             <div className="relative h-56 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800"
+                                    src={turnkeyEngineer}
                                     alt="Our Mission"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
@@ -119,7 +121,7 @@ const About = () => (
                         <div className="group card-interactive bg-card rounded-2xl overflow-hidden card-shadow flex flex-col h-full">
                             <div className="relative h-56 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+                                    src={towerLandscape}
                                     alt="Our Vision"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
@@ -152,7 +154,7 @@ const About = () => (
         <section className="section-padding hero-gradient">
             <div className="container-narrow">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <StatCounter value={14} suffix="+" label="Years Experience" />
+                    <StatCounter value={15} suffix="+" label="Years Experience" />
                     <StatCounter value={500} suffix="+" label="Successful Projects" />
                     <StatCounter value={50} suffix="+" label="Current Projects" />
                     <StatCounter value={100} suffix="+" label="Clients Served" />

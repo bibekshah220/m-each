@@ -16,8 +16,11 @@ import {
     ChevronDown,
 } from "lucide-react";
 import Modal from "@/components/Modal";
+import NetworkStatusHUD from "@/components/NetworkStatusHUD";
 import { services, Service } from "@/data/siteData";
-import NetworkMap from "@/components/NetworkMap";
+import operationalMap from "@/assets/operational-map.png";
+import turnkeyEngineer from "@/assets/gallery/turnkey-engineer.png";
+import towerLandscape from "@/assets/gallery/telecom-tower-landscape.jpg";
 
 const iconMap: Record<string, React.ElementType> = {
     "map-pin": MapPin,
@@ -75,8 +78,8 @@ const ServicesIndex = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex-1 w-full max-w-2xl">
-                            <NetworkMap />
+                        <div className="flex-1 w-full max-w-2xl relative">
+                            <NetworkStatusHUD />
                         </div>
                     </div>
                 </div>
@@ -89,12 +92,12 @@ const ServicesIndex = () => {
                         <div className="flex-1 order-2 lg:order-1">
                             <div className="relative">
                                 <img
-                                    src="https://images.unsplash.com/photo-1600880212340-02d9566209b5?auto=format&fit=crop&q=80&w=800"
+                                    src={turnkeyEngineer}
                                     alt="Expert Team"
                                     className="rounded-[2.5rem] shadow-2xl"
                                 />
                                 <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-3xl shadow-xl hidden md:block">
-                                    <p className="text-4xl font-bold mb-1">14+</p>
+                                    <p className="text-4xl font-bold mb-1">15+</p>
                                     <p className="text-sm font-semibold opacity-80 uppercase tracking-wider">Years Experience</p>
                                 </div>
                             </div>
@@ -279,7 +282,7 @@ const ServicesIndex = () => {
                         <div className="flex-1 relative z-10 w-full max-w-md hidden md:block">
                             <div className="relative group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800"
+                                    src={towerLandscape}
                                     alt="Telecom Infrastructure"
                                     className="rounded-3xl shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500"
                                 />

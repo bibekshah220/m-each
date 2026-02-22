@@ -1,3 +1,19 @@
+// Import authentic assets for site data
+import solarDeployment from "@/assets/gallery/solar-deployment.png";
+import rooftopTelecom from "@/assets/gallery/rooftop-telecom.png";
+import civilExcavation from "@/assets/gallery/civil-excavation.png";
+import infraLogistics from "@/assets/gallery/infrastructure-logistics.png";
+import siteSurveyor from "@/assets/gallery/site-surveyor.png";
+import towerClimber from "@/assets/gallery/tower-climber.png";
+import turnkeyEngineer from "@/assets/gallery/turnkey-engineer.png";
+import equipmentCabinet from "@/assets/gallery/equipment-cabinet.jpg";
+import microwaveDish from "@/assets/gallery/microwave-dish.png";
+import powerTransformer from "@/assets/gallery/power-transformer.png";
+import onsiteSafety from "@/assets/gallery/onsite-safety.png";
+import towerLattice from "@/assets/gallery/telecom-tower-lattice.jpg";
+import towerLandscape from "@/assets/gallery/telecom-tower-landscape.jpg";
+import siteBase from "@/assets/gallery/telecom-site-base.jpg";
+
 // ── Services ───────────────────────────────────────────────────
 export interface Service {
   slug: string;
@@ -27,7 +43,7 @@ export const services: Service[] = [
       "Power Availability Assessment"
     ],
     icon: "map-pin",
-    imageUrl: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=800",
+    imageUrl: siteSurveyor, // Targeted Surveyor visual
   },
   {
     slug: "turnkey-services",
@@ -45,7 +61,7 @@ export const services: Service[] = [
       "Handover & Documentation"
     ],
     icon: "key",
-    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
+    imageUrl: turnkeyEngineer, // Targeted Turnkey Project Engineer visual
   },
   {
     slug: "cwti-civil-works-tower-installation",
@@ -63,7 +79,7 @@ export const services: Service[] = [
       "Earthing & Lightning Protection Systems"
     ],
     icon: "tower-control",
-    imageUrl: "https://images.unsplash.com/photo-1516387554219-79896227951c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: towerClimber, // Targeted Tower/Climber visual
   },
   {
     slug: "telecommunications-equipment-installation",
@@ -81,7 +97,7 @@ export const services: Service[] = [
       "Network Connectivity Verification"
     ],
     icon: "radio",
-    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+    imageUrl: microwaveDish, // Targeted Microwave/Equipment visual
   },
   {
     slug: "core-networks",
@@ -99,43 +115,43 @@ export const services: Service[] = [
       "High-Availability Monitoring"
     ],
     icon: "server",
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010ccdcc51?auto=format&fit=crop&q=80&w=800",
+    imageUrl: equipmentCabinet, // High-Fidelity Core Server/Cabinet visual
   },
   {
-    slug: "power-installation",
-    title: "Power Installation",
-    shortDesc: "Deploying power backup and distribution solutions.",
+    slug: "power-solar-grid-backup",
+    title: "Power (Solar, Grid connection, backup)",
+    shortDesc: "Reliable power solutions for isolated network sites.",
     description:
-      "Deploying power backup solutions, rectifiers, batteries, and generators to ensure uninterrupted operation.",
-    fullDesc: "Telecom reliability depends on power consistency. We design and install robust power systems, incorporating solar, grid, and backup generators to maintain 99.9% uptime for critical infrastructure.",
+      "Implementing comprehensive power solutions including solar systems, grid connectivity, and battery backups for network resilience.",
+    fullDesc: "Power reliability is critical for network uptime. We specialize in bringing stable electricity to remote sites through grid extensions and hybrid solar energy solutions.",
     features: [
-      "AC/DC Power Systems",
-      "Rectifier & Battery Backup",
-      "Solar Power Integration",
-      "Generator Installation & ATS",
-      "Electrical Wiring & Distribution",
-      "Energy Efficiency Audits"
+      "Solar Panel Array Installation",
+      "Hybrid Power Controllers",
+      "Deep-Cycle Battery Storage",
+      "Grid Transformer Setup",
+      "Emergency Generator Integration",
+      "Remote Power Monitoring"
     ],
     icon: "zap",
-    imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb60c883a?auto=format&fit=crop&q=80&w=800",
+    imageUrl: solarDeployment, // Authentic Solar Deployment Aerial
   },
   {
-    slug: "optical-fiber-laying-and-installation",
-    title: "Optical Fiber Laying and Installation",
-    shortDesc: "Laying aerial and underground fiber networks.",
+    slug: "optical-fiber-network",
+    title: "Optical Fiber Network",
+    shortDesc: "High-speed backhaul and transmission solutions.",
     description:
-      "Laying and integrating aerial and underground Fiber-to-the-Home (FTTH) and backbone fiber networks.",
-    fullDesc: "We provide high-speed connectivity solutions through expert fiber optic engineering. Our services cover everything from long-haul backbone networks to complex city-wide FTTH rollouts.",
+      "Deploying and maintaining long-haul and metro optical fiber networks for high-capacity data transmission.",
+    fullDesc: "We provide end-to-end fiber deployment services, including trenching, ducting, and high-precision splicing for both underground and aerial networks across Nepal.",
     features: [
-      "Underground Trenching & HDD",
-      "Aerial Cable Stringing",
-      "Fiber Splicing & Termination",
-      "OTDR Testing & Certification",
-      "FTTH Network Deployment",
-      "ODF & Patch Panel Setup"
+      "Underground Fiber Trenching",
+      "Aerial Fiber Deployment",
+      "Metro & Long-Haul Optics",
+      "Fusion Splicing & Testing",
+      "Fiber Distribution Hubs",
+      "Transmission Link Optimization"
     ],
-    icon: "cable",
-    imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    icon: "activity",
+    imageUrl: civilExcavation, // Authentic Fiber Trenching/Civil Works
   },
   {
     slug: "drive-test-and-network-optimization",
@@ -153,7 +169,7 @@ export const services: Service[] = [
       "Post-Launch Performance Reports"
     ],
     icon: "gauge",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    imageUrl: siteSurveyor, // High-Fidelity Drive Test visual
   },
   {
     slug: "supply-of-tower-fencing-grounding",
@@ -171,7 +187,7 @@ export const services: Service[] = [
       "Climate Control Enclosures"
     ],
     icon: "package",
-    imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+    imageUrl: infraLogistics, // Authentic Supply & Logistics
   },
   {
     slug: "operation-and-maintenance-of-networks",
@@ -189,7 +205,7 @@ export const services: Service[] = [
       "Environmental Monitoring"
     ],
     icon: "wrench",
-    imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
+    imageUrl: onsiteSafety, // Professional Field Maintenance
   },
   {
     slug: "operation-and-maintenance-of-optical-fiber",
@@ -207,7 +223,7 @@ export const services: Service[] = [
       "Signal Quality Audits"
     ],
     icon: "activity",
-    imageUrl: "https://images.unsplash.com/photo-1601343534104-98812b3babc3?auto=format&fit=crop&q=80&w=800",
+    imageUrl: civilExcavation, // Authentic Fiber Maintenance
   },
   {
     slug: "reverse-engineering-and-site-upgradation",
@@ -225,7 +241,58 @@ export const services: Service[] = [
       "Retrofitting Legacy Systems"
     ],
     icon: "refresh-cw",
-    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: rooftopTelecom, // Detailed Site Upgradation visual
+  },
+  {
+    slug: "site-management-and-resource-optimization",
+    title: "Site Management & Resource Optimization",
+    shortDesc: "Streamlining site operations for maximum efficiency.",
+    description:
+      "Comprehensive management of telecom sites, ensuring optimal resource allocation and uninterrupted service delivery.",
+    fullDesc: "Effective site management is the key to network stability. We provide end-to-end oversight of site resources, including power systems, physical security, and environmental controls to ensure 99.9% uptime.",
+    features: [
+      "Operational Resource Tracking",
+      "Power Utility Management",
+      "Security & Access Control",
+      "Inventory Audits",
+      "Cost Optimization Reports"
+    ],
+    icon: "clipboard-list",
+    imageUrl: onsiteSafety,
+  },
+  {
+    slug: "equipment-building-and-fencing",
+    title: "Equipment Building & Fencing Construction",
+    shortDesc: "Building secure enclosures for network protection.",
+    description:
+      "Design and construction of specialized equipment buildings and secure fencing to protect critical infrastructure.",
+    fullDesc: "We build robust, weather-resistant shelters and high-security fencing systems designed to protect sensitive telecom electronics from environmental hazards and unauthorized access.",
+    features: [
+      "Prefabricated Shelter Assembly",
+      "High-Security Perimeter Fencing",
+      "Weatherproofing & Insulation",
+      "Security Gate Installation",
+      "Civil Base Construction"
+    ],
+    icon: "shield-check",
+    imageUrl: rooftopTelecom, // Authentic Equipment Building visual
+  },
+  {
+    slug: "infrastructure-logistics-and-relocation",
+    title: "Infrastructure Logistics & Relocation Services",
+    shortDesc: "Expert handling and transport of telecom assets.",
+    description:
+      "Professional logistics management for the transport and relocation of heavy telecom and power infrastructure assets.",
+    fullDesc: "Transporting infrastructure in Nepal's difficult terrain requires specialized expertise. We manage the end-to-end logistics of relocating towers, shelters, and power systems with zero damage.",
+    features: [
+      "Heavy Asset Transportation",
+      "Rigging & Crane Operations",
+      "Terrain-Specific Logistics",
+      "Insurance & Risk Management",
+      "Temporary Storage Solutions"
+    ],
+    icon: "truck",
+    imageUrl: infraLogistics,
   },
 ];
 
@@ -246,7 +313,7 @@ export const projects: Project[] = [
     description:
       "Comprehensive site relocation services including dismantling, transportation, and reinstallation of telecom equipment at new locations.",
     category: "Telecom",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
+    image: infraLogistics,
     location: "Various Locations, Nepal",
     status: "Completed",
     completionDate: "2024"
@@ -256,80 +323,110 @@ export const projects: Project[] = [
     description:
       "Establishing reliable grid power connections for telecom sites, including transformer installation and power line extensions.",
     category: "Power",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    image: powerTransformer,
     location: "Terai Region, Nepal",
     status: "Completed",
     completionDate: "2023"
   },
   {
-    title: "Ncell Rollout Project",
+    title: "High-Altitude Solar Power Installation",
     description:
-      "Large-scale network rollout for Ncell, one of Nepal's leading telecom operators, covering site acquisition through commissioning.",
-    category: "Telecom",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+      "Designing and implementing autonomous solar power systems for remote telecom towers in high-altitude Himalayan regions.",
+    category: "Solar",
+    image: solarDeployment,
     location: "Western Region, Nepal",
-    status: "Ongoing",
-    completionDate: "2025 (Projected)"
-  },
-  {
-    title: "Small Cell Solution",
-    description:
-      "Deployment of small cell solutions to enhance network coverage in dense urban areas and indoor environments.",
-    category: "Telecom",
-    image: "https://images.unsplash.com/photo-1516383617811-952d8775f0a2?auto=format&fit=crop&q=80&w=800",
-    location: "Kathmandu Valley",
     status: "Completed",
     completionDate: "2024"
   },
   {
-    title: "Physical Verification of Assets",
+    title: "Kathmandu Metro Fiber Deployment",
     description:
-      "Thorough on-site verification and documentation of telecom infrastructure assets for accurate inventory management.",
-    category: "Audit",
-    image: "https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=800",
-    location: "Nationwide, Nepal",
-    status: "Completed",
-    completionDate: "2023"
+      "Laying high-capacity underground optical fiber networks across the dense urban environment of Kathmandu Valley.",
+    category: "Optical Fiber",
+    image: civilExcavation,
+    location: "Kathmandu Valley",
+    status: "Ongoing",
+    completionDate: "2025"
   },
   {
-    title: "2G BTS in Existing 4G LTE Sites",
+    title: "Nationwide Passive Maintenance",
     description:
-      "Survey, transportation, installation, and commissioning of 2G BTS equipment in existing 4G LTE sites for expanded coverage.",
+      "Providing comprehensive operation and maintenance services for thousands of telecom sites across all provinces of Nepal.",
+    category: "Maintenance",
+    image: towerClimber,
+    location: "Nationwide, Nepal",
+    status: "Ongoing",
+    completionDate: "Ongoing"
+  },
+  {
+    title: "Eastern Region Tower Rollout",
+    description:
+      "Large-scale deployment of new ground-based towers to expand network coverage in the Eastern hills and plains.",
     category: "Telecom",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    image: towerLattice,
     location: "Eastern Region, Nepal",
     status: "Completed",
-    completionDate: "2024"
-  },
-  {
-    title: "Equipment Building & Fencing Construction",
-    description:
-      "Construction of secure equipment buildings and fencing for telecom sites, ensuring protection and compliance.",
-    category: "Infrastructure",
-    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800",
-    location: "Pokhara Valley",
-    status: "Completed",
     completionDate: "2023"
   },
   {
-    title: "Underground Optical Fiber Network",
+    title: "Pokhara Smart City Connectivity",
     description:
-      "Construction of underground optical fiber networks and related civil works for high-speed data connectivity.",
-    category: "Fiber",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
-    location: "Lumbini Province",
+      "Installing high-speed wireless backhaul and smart city infrastructure in the tourism hub of Pokhara.",
+    category: "Smart City",
+    image: turnkeyEngineer,
+    location: "Pokhara Valley",
     status: "Completed",
     completionDate: "2024"
+  },
+  {
+    title: "Lumbini Power Grid Modernization",
+    description:
+      "Upgrading aging power distribution infrastructure in the Lumbini Province to support increased demand and industrial growth.",
+    category: "Power",
+    image: towerLandscape,
+    location: "Lumbini Province",
+    status: "Ongoing",
+    completionDate: "2025"
   },
   {
     title: "Underground Electricity Distribution Network",
     description:
       "Design and construction of underground electricity distribution networks for reliable power supply.",
     category: "Power",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    image: siteBase,
     location: "Gandaki Province",
     status: "Completed",
     completionDate: "2023"
+  },
+  {
+    title: "Eastern Nepal Microwave Backbone Upgrade",
+    description:
+      "High-capacity microwave link deployment to strengthen core transmission networks in the eastern border regions.",
+    category: "Transmission",
+    image: microwaveDish,
+    location: "Koshi Province",
+    status: "Completed",
+    completionDate: "2024"
+  },
+  {
+    title: "Remote Village Off-Grid Power Solution",
+    description:
+      "Integrated solar and battery backup systems for isolated community network hubs in the Karnali region.",
+    category: "Solar",
+    image: solarDeployment,
+    location: "Karnali Province",
+    status: "Ongoing",
+    completionDate: "2025"
+  },
+  {
+    title: "Urban Fiber Ring Expansion - Kathmandu",
+    description:
+      "Expansion of the metro fiber ring to provide redundant high-speed backhaul for corporate and residential hubs.",
+    category: "Optical Fiber",
+    image: civilExcavation,
+    location: "Kathmandu Metro",
+    status: "Completed",
+    completionDate: "2024"
   },
 ];
 

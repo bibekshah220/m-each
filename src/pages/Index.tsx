@@ -64,7 +64,7 @@ const processSteps = [
 const whyChooseUs = [
     {
         icon: Award,
-        title: "14+ Years Experience",
+        title: "15+ Years Experience",
         desc: "Proven track record with over 500 successful projects across Nepal.",
     },
     {
@@ -249,7 +249,7 @@ const Index = () => {
             <section className="stats-bar">
                 <div className="container-narrow">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <StatCounter value={14} suffix="+" label="Years Experience" />
+                        <StatCounter value={15} suffix="+" label="Years Experience" />
                         <StatCounter value={500} suffix="+" label="Successful Projects" />
                         <StatCounter value={200} suffix="+" label="Towers Installed" />
                         <StatCounter value={100} suffix="+" label="Clients Served" />
