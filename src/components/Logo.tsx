@@ -28,13 +28,14 @@ const Logo = ({ size = "md", variant = "default", showText = true }: LogoProps) 
                 <style>
                     {`
                         @keyframes transmit {
-                            0% { opacity: 0.3; transform: scale(0.9); }
-                            50% { opacity: 1; transform: scale(1); }
-                            100% { opacity: 0.3; transform: scale(0.9); }
+                            0% { opacity: 0.2; transform: scale(0.8) translateX(-2px); }
+                            50% { opacity: 1; transform: scale(1.1) translateX(0); }
+                            100% { opacity: 0.2; transform: scale(0.8) translateX(-2px); }
                         }
                         .signal-wave {
                             animation: transmit 2s infinite ease-in-out;
                             transform-origin: center;
+                            transform-box: fill-box;
                         }
                         .wave-1 { animation-delay: 0s; }
                         .wave-2 { animation-delay: 0.5s; }

@@ -118,9 +118,14 @@ const Contact = () => {
                         <div className="flex-1">
                           <p className="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-tight">Visit Our Office</p>
                           <p className="text-slate-500 dark:text-slate-400 mb-3">Shankhamul-34, Kathmandu, Nepal</p>
-                          <button className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-lg border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all w-full md:w-auto overflow-hidden text-ellipsis whitespace-nowrap">
+                          <a
+                            href="https://maps.google.com/maps?q=M-EACH+Group+of+Technology+Pvt.+Ltd.+Shankhamul-34,Kathmandu,Nepal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-lg border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all w-full md:w-auto overflow-hidden text-ellipsis whitespace-nowrap"
+                          >
                             Visit Us <ExternalLink className="w-3.5 h-3.5 ml-auto" />
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
