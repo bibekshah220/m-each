@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Modal from "@/components/Modal";
 import { services, Service } from "@/data/siteData";
+import NetworkMap from "@/components/NetworkMap";
 
 const iconMap: Record<string, React.ElementType> = {
     "map-pin": MapPin,
@@ -75,28 +76,7 @@ const ServicesIndex = () => {
                             </div>
                         </div>
                         <div className="flex-1 w-full max-w-2xl">
-                            <div className="service-hero-mockup">
-                                <img
-                                    src="https://images.unsplash.com/photo-1551288049-bb1c003f07af?auto=format&fit=crop&q=80&w=1200"
-                                    alt="Network Analytics Dashboard"
-                                    className="w-full h-full object-cover grayscale opacity-50 dark:opacity-30"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent pointer-events-none" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-2xl scale-90 md:scale-100">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <div className="w-3 h-3 rounded-full bg-red-500" />
-                                            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                                            <div className="w-3 h-3 rounded-full bg-green-500" />
-                                        </div>
-                                        <div className="space-y-3">
-                                            <div className="h-4 w-48 bg-blue-600/20 rounded-full" />
-                                            <div className="h-4 w-64 bg-slate-200 dark:bg-white/10 rounded-full" />
-                                            <div className="h-4 w-40 bg-slate-200 dark:bg-white/10 rounded-full" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <NetworkMap />
                         </div>
                     </div>
                 </div>
