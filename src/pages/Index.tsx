@@ -215,7 +215,7 @@ const Index = () => {
             {/* Hero */}
             <HeroSection>
                 <div className="flex flex-col items-center text-center">
-                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 rounded-full text-blue-400 bg-blue-500/10 backdrop-blur-sm border border-blue-400/20">
+                    <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 rounded-full text-blue-400 bg-blue-500/10 backdrop-blur-sm border border-blue-400/20 animate-subtle-glow">
                         Since 2011 — Trusted Infrastructure Partner
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-white mb-6 leading-[1.1]">
